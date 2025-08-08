@@ -1,0 +1,291 @@
+/*
+ * Estudio G – hoja de estilos principal
+ *
+ * Esta hoja define una paleta sobria basada en fondos claros,
+ * tipografía sans‑serif y acentos verdes inspirados en el logo
+ * de la oficina. La intención es transmitir seriedad y confianza
+ * sin dejar de lado la calidez y cercanía de los textos. Se han
+ * incorporado reglas responsive básicas para que el sitio sea
+ * legible en pantallas pequeñas.
+ */
+
+/* Variables de color para reutilizar con facilidad */
+:root {
+  --color-fondo: #ffffff;
+  --color-texto: #222222;
+  --color-secundario: #555555;
+  --color-acento: #5b7b37; /* tono verde sobrio derivado del logo */
+  --max-width: 1200px;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  background-color: var(--color-fondo);
+  color: var(--color-texto);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Reset enlaces */
+a {
+  color: var(--color-texto);
+  text-decoration: none;
+}
+a:hover {
+  color: var(--color-acento);
+}
+
+/* Navegación principal */
+header {
+  background-color: var(--color-fondo);
+  border-bottom: 1px solid #e6e6e6;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.nav-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0.8rem 1rem;
+}
+
+header .logo img {
+  height: 40px;
+}
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 2rem;
+}
+
+nav li {
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+nav a {
+  position: relative;
+  padding-bottom: 4px;
+}
+
+nav a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 2px;
+  background-color: var(--color-acento);
+  transition: width 0.3s ease;
+}
+
+nav a:hover::after {
+  width: 100%;
+}
+
+/* Sección de la página de aterrizaje */
+.landing {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: var(--color-fondo);
+}
+
+.landing-logo {
+  max-width: 40vw;
+  height: auto;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.landing-logo:hover {
+  transform: scale(1.05);
+}
+
+/* Secciones generales */
+main {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+h1 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: var(--color-texto);
+}
+
+h2 {
+  font-size: 1.5rem;
+  margin-top: 2rem;
+  margin-bottom: 0.8rem;
+  color: var(--color-texto);
+}
+
+p {
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  color: var(--color-secundario);
+  max-width: 70ch;
+}
+
+/* Galería de imágenes en el proyecto emblemático */
+.flagship-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.flagship-gallery img {
+  width: 100%;
+  height: auto;
+  border-radius: 4px;
+  object-fit: cover;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+}
+
+/* Botón genérico */
+.btn {
+  display: inline-block;
+  background-color: var(--color-acento);
+  color: #ffffff;
+  padding: 0.75rem 1.5rem;
+  border-radius: 4px;
+  font-size: 1rem;
+  margin-top: 2rem;
+  transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #4b6430;
+}
+
+/* Tarjetas de proyectos en la vista general */
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  margin-top: 1.5rem;
+}
+
+.project-card {
+  border: 1px solid #e6e6e6;
+  border-radius: 4px;
+  overflow: hidden;
+  transition: box-shadow 0.3s ease;
+  background-color: #fafafa;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.project-card:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.project-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.project-card .card-body {
+  padding: 1rem;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.project-card h3 {
+  margin: 0;
+  font-size: 1.25rem;
+  color: var(--color-texto);
+}
+
+.project-card .meta {
+  font-size: 0.875rem;
+  color: var(--color-secundario);
+  margin: 0.5rem 0 1rem 0;
+}
+
+.project-card a {
+  color: var(--color-acento);
+  font-weight: 600;
+}
+
+/* Página de detalle de proyecto */
+.project-detail-header {
+  margin-bottom: 2rem;
+}
+
+.project-detail-header h1 {
+  margin-bottom: 0.5rem;
+}
+
+.project-meta {
+  font-size: 0.9rem;
+  color: var(--color-secundario);
+  margin-bottom: 1.5rem;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+
+.gallery img {
+  width: 100%;
+  border-radius: 4px;
+  object-fit: cover;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+}
+
+/* Pie de página */
+footer {
+  background-color: #f5f5f5;
+  padding: 2rem 1rem;
+  margin-top: 3rem;
+  color: var(--color-secundario);
+}
+
+footer .footer-container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+}
+
+footer h4 {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+  color: var(--color-texto);
+}
+
+footer a {
+  color: var(--color-acento);
+}
+
+/* Media queries */
+@media (max-width: 768px) {
+  nav ul {
+    gap: 1rem;
+  }
+  .project-card img {
+    height: 160px;
+  }
+}
