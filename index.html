@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Estudio G | Inicio</title>
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body class="landing">
+    <!--
+      Página de entrada: muestra únicamente el logo sobre un fondo blanco.
+      Al hacer clic en el logo se redirecciona a la página principal del sitio.
+    -->
+    <div class="landing-container">
+      <img
+        src="assets/logo.png"
+        alt="Estudio G"
+        class="landing-logo"
+        id="landingLogo"
+      />
+    </div>
+    <script>
+      // Redirige a la página del proyecto emblemático cuando se hace clic en el logo
+      document.getElementById('landingLogo').addEventListener('click', function () {
+        window.location.href = 'flagship.html';
+      });
+    </script>
+  </body>
+</html>
